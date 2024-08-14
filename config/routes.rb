@@ -3,4 +3,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "top", to: "top#top"
+  post "menu", to: "menu#show"
 end
