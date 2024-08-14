@@ -1,0 +1,17 @@
+current directory: /home/higa/works/ruby/simple_kondate/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+/home/higa/.rbenv/versions/3.1.2/bin/ruby -I /home/higa/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20240814-380254-jy46jj.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+checking for rb_reg_onig_match() in ruby.h... no
+creating Makefile
+
+current directory: /home/higa/works/ruby/simple_kondate/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= clean
+
+current directory: /home/higa/works/ruby/simple_kondate/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\=
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/higa/works/ruby/simple_kondate/vendor/bundle/ruby/3.1.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20240814-380254-ecmjg2
