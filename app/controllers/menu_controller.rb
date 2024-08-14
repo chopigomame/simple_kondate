@@ -6,5 +6,6 @@ class MenuController < ActionController::Base
 		@main_ingredient = params[:main_ingredient]
 		@is_soup = params[:soup] == "汁物"
 		@is_noodle = params[:noodle] == "麺"
+		@recommend = Menu.find_menu(@cuisine, @main_ingredient, @is_soup, @is_noodle)
 	end
 end
