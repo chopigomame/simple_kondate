@@ -1,0 +1,49 @@
+<!-- app/views/menus/new.html.erb -->
+<h1>メニューを追加</h1>
+
+<div id="notice"></div>
+
+<%= form_with model: @menu, url: menus_path, method: :post, local: false, id: "menu_form" do |form| %>
+  <div>
+    <%= form.label :name, "メニュー名" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :cuisine, "料理の種類" %>
+    <%= form.select :cuisine, ["和食", "中華", "洋食"] %>
+  </div>
+
+  <div>
+    <%= form.label :main_ingredient, "主な食材" %>
+    <%= form.select :main_ingredient, ["肉", "魚", "野菜"] %>
+  </div>
+
+  <div>
+    <%= form.label :is_soup, "汁物" %>
+    <%= form.check_box :is_soup %>
+  </div>
+
+  <div>
+    <%= form.label :is_noodle, "麺" %>
+    <%= form.check_box :is_noodle %>
+  </div>
+
+  <%= form.submit "登録" %>
+<% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("menu_form");
+    form.addEventListener("ajax:success", function(event) {
+      const [data, status, xhr] = event.detail;
+      document.getElementById("notice").innerText = data.message;
+      form.reset();  // フォームのリセット
+    });
+
+    form.addEventListener("ajax:error", function(event) {
+      const [errors, status, xhr] = event.detail;
+      alert("エラー: " + errors.join(", "));
+    });
+  });
+</script>

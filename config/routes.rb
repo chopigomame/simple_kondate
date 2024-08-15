@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "top", to: "top#top"
   post "menu", to: "menu#show"
+  
+  resources :add_menu, only: [:new, :create]
 end
