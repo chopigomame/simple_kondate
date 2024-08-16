@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_08_15_050557) do
+ActiveRecord::Schema[7.0].define(version: 2024_08_16_012346) do
   create_table "menus", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "cuisine"
@@ -24,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_08_15_050557) do
   create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

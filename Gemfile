@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 
 gem "mysql2"
 gem "jquery-rails"
+gem "bcrypt"
 
 # Use Sass to process CSS
 # gem "sassc-rails"

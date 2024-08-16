@@ -1,33 +1,6 @@
-<!-- app/views/menus/new.html.erb -->
-<h1>メニューを追加</h1>
-
-<div id="notice"></div>
-
-<%= form_with model: @menu, url: add_menu_index_path, method: :post, local: false, id: "menu_form" do |form| %>
-  <div>
-    <%= form.label :name, "メニュー名" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :cuisine, "料理の種類" %>
-    <%= form.select :cuisine, ["和食", "中華", "洋食"] %>
-  </div>
-
-  <div>
-    <%= form.label :main_ingredient, "主な食材" %>
-    <%= form.select :main_ingredient, ["肉", "魚", "野菜"] %>
-  </div>
-
-  <div>
-    <%= form.label :is_soup, "汁物" %>
-    <%= form.check_box :is_soup %>
-  </div>
-
-  <div>
-    <%= form.label :is_noodle, "麺" %>
-    <%= form.check_box :is_noodle %>
-  </div>
-
-  <%= form.submit "登録" %>
+<h1>メニュー追加ページ</h1>
+<% if logged_in? %>
+  <%= render 'add_menu/logged_in' %>
+<% else %>
+  <%= render 'add_menu/not_logged_in' %>
 <% end %>

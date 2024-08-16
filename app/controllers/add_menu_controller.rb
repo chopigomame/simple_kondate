@@ -1,4 +1,5 @@
 class AddMenuController < ActionController::Base
+	before_action :logged_in_user, only:[:edit, :update, :destroy]
 	def new
 		@menu = Menu.new
 	end
