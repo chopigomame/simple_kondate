@@ -7,11 +7,11 @@ class AddMenuController < ActionController::Base
 		@menu = Menu.new(menu_params)
 		if @menu.save
 			respond_to do |format|
-				format.json { render json: {message: "#{@menu.name} を登録しました", status: :created }}
+				format.html { redirect_to new_add_menu_path, notice: "#{@menu.name} を登録しました" }
 			end
 		else
 			respond_to do |format|
-				format.json { render json: { errors: @menu.erros.full_messages }, status: :unprocessable_entity }
+				format.html { render :new, status: :unprocessable_entity }
 			end
 		end
 	end

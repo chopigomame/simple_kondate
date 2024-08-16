@@ -3,7 +3,7 @@
 
 <div id="notice"></div>
 
-<%= form_with model: @menu, url: menus_path, method: :post, local: false, id: "menu_form" do |form| %>
+<%= form_with model: @menu, url: add_menu_index_path, method: :post, local: false, id: "menu_form" do |form| %>
   <div>
     <%= form.label :name, "メニュー名" %>
     <%= form.text_field :name %>
@@ -31,19 +31,3 @@
 
   <%= form.submit "登録" %>
 <% end %>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("menu_form");
-    form.addEventListener("ajax:success", function(event) {
-      const [data, status, xhr] = event.detail;
-      document.getElementById("notice").innerText = data.message;
-      form.reset();  // フォームのリセット
-    });
-
-    form.addEventListener("ajax:error", function(event) {
-      const [errors, status, xhr] = event.detail;
-      alert("エラー: " + errors.join(", "));
-    });
-  });
-</script>
